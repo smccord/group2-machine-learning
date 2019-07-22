@@ -10,7 +10,7 @@
 
 ## Instructions
 
-### Adding the uva hydroinformatics code to this github repo ###
+### Adding code from other repos to this github repo ###
 ```sh
 git clone repo you want
 cd repofolder
