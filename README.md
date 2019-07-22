@@ -1,1 +1,27 @@
 # group2-machine-learning
+
+# Introduction
+
+## Project phases
+- Making the repository and the required materials.
+- Build docker containers for the MNIST analyses
+- Use workflow tools + cloud/HPC computing to run MNIST analyses
+- Repeat steps above for fashion MNIST and humback whale classification if time.
+
+## Instructions
+
+### Adding the uva hydroinformatics code to this github repo ###
+```sh
+git clone repo you want
+cd repofolder
+git remote add destination https://github.com/cyber-carpentry/group2-machine-learning
+git remote rm origin
+git pull --allow-unrelated-histories https://github.com/cyber-carpentry/group2-machine-learning
+git push -u destination master
+```
+
+## Group 2 Useful Links
+
+[HackMD Notes](https://hackmd.io/@stephprince/r1BFBO7MH)
+
+[Planning Notes](https://hackmd.io/8IlRqMagSr-wxBMXtmtgnA?both#Planning)
