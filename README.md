@@ -24,10 +24,10 @@
   
      ```docker run -it username/machinelearning sh ```
   
-  The default is to run a neural net classifier on all of the MNIST, fashion MNIST, and Humpback Whale Tail datasets. If you would like to specify a dataset, you can add it with the ```-e``` tag (see example below). Options are mnist, fashion, whale. 
-    
-     ```docker run -e dataset=mnist, -it username/machinelearning sh ```
-     
+      The default is to run a neural net classifier on all of the MNIST, fashion MNIST, and Humpback Whale Tail datasets. If you would like to specify a dataset, you can add it with the ```-e``` tag (see example below). Options are mnist, fashion, whale. 
+      
+      ```docker run -e dataset=mnist, -it username/machinelearning sh ```
+      
   3. The neural network builder and classifier has launched! When it is finished, you will see an output file with a text and pdf summary of the results. Compare your results to the example output below
 
 
