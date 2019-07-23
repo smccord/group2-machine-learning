@@ -21,7 +21,7 @@ git push -u destination master
 ```
 
 ### Launching MNIST classifier with mlp neural network ###
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cyber-carpentry/group2-machine-learning/master?filepath=mlp_MNIST_smp.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cyber-carpentry/group2-machine-learning/master)
 
 ## Group 2 Useful Links
 
