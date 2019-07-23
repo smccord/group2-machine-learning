@@ -20,6 +20,9 @@ git pull --allow-unrelated-histories https://github.com/cyber-carpentry/group2-m
 git push -u destination master
 ```
 
+### Launching MNIST classifier with mlp neural network ###
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cyber-carpentry/group2-machine-learning/master?filepath=mlp_MNIST_smp.ipynb)
+
 ## Group 2 Useful Links
 
 [HackMD Notes](https://hackmd.io/@stephprince/r1BFBO7MH)
