@@ -10,15 +10,7 @@
 
 ## Instructions
 
-### Adding code from other repos to this github repo ###
-```sh
-git clone repo you want
-cd repofolder
-git remote add destination https://github.com/cyber-carpentry/group2-machine-learning
-git remote rm origin
-git pull --allow-unrelated-histories https://github.com/cyber-carpentry/group2-machine-learning
-git push -u destination master
-```
+
 
 ### Launching MNIST classifier with mlp neural network ###
 
