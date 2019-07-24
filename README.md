@@ -17,7 +17,7 @@
   4. Once the instance is "Active," go into the shell either through the Web Shell or via ssh.
   
 ### Run the docker image
-  1. Pull the docker image with the command below. You can use ```sh docker images ``` to check if you successfully pulled the image. 
+  1. Pull the docker image with the command below. You can use ``` docker images ``` to check if you successfully pulled the image. 
   
      ``` docker pull sprince399/mlnotebook ```
      
@@ -27,7 +27,7 @@
   
      ```docker run -e dataset=mnist -it sprince399/mlnotebook sh ```
   
-      The default is to run a neural net classifier on MNIST. If you would like to specify a dataset, you can add it with the ```-e``` tag (see example below). Options are mnist, fashion, whale. 
+      The default is to run a neural net classifier on MNIST. If you would like to specify a dataset, you can add it with the ```-e``` tag (see example above). Options are mnist, fashion, whale. 
       
       Now the neural network builder and classifier has launched! When it is finished, you will see an output file with a text and pdf summary of the results. Compare your results to the example output below
       
