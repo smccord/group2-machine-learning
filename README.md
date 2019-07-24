@@ -20,13 +20,11 @@
   1. Pull the docker image with the command below. You can use ```sh docker images ``` to check if you successfully pulled the image. 
   
      ``` docker pull sprince399/mlnotebook ```
-  2. Run the image with the command below. 
+  2. Run the image with the command below if you would like to automatically initiate and run the neural networks. 
   
-     ```docker run -it sprince399/mlnotebook sh ```
+     ```docker run -e dataset=mnist -it sprince399/mlnotebook sh ```
   
       The default is to run a neural net classifier on all of the MNIST, fashion MNIST, and Humpback Whale Tail datasets. If you would like to specify a dataset, you can add it with the ```-e``` tag (see example below). Options are mnist, fashion, whale. 
-      
-      ```docker run -e dataset=mnist -it sprince399/mlnotebook sh ```
       
   3. The neural network builder and classifier has launched! When it is finished, you will see an output file with a text and pdf summary of the results. Compare your results to the example output below
 
