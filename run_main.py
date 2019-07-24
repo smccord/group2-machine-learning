@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # In[ ]:
-# this file is runnable by: python run_main.py my_input_file --int_param dataset_name
+# this file is runnable by: python run_main.py dataset --int_param dataset_name
 
 import sys,os
 IPYNB_FILENAME = 'main.ipynb'
