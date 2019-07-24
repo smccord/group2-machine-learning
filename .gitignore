@@ -1,6 +1,3 @@
 *.ipynb_checkpoints
 *.config_ipynb
 *.DS_Store
-*.txt
-*.pdf
-*.html
