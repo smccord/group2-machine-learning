@@ -49,7 +49,18 @@
         _If you are on a Jetstream instance_ copy the IP address from the instance. Then in your own browser type in http://JetstreamIPAddress:80. You will be prompted to enter a token which you can copy from the prompt. 
             
        Now you can play around with the neural network models! Select any of the files to explore. 
-      
+       
+       
+## Compare your results to the ones below! 
+
+### MNIST ###
+Summary of model and performance
+Loss and accuracy over epochs
+
+### fashion MNIST ###
+Summary of model and performance
+Loss and accuracy over epochs
+
 ## Group 2 Useful Links
 
 [HackMD Notes](https://hackmd.io/@stephprince/r1BFBO7MH)
