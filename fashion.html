@@ -13511,11 +13511,7 @@ Stored &#39;y_test&#39; (ndarray)
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>WARNING: Logging before flag parsing goes to stderr.
-W0724 16:42:35.094895 4375664064 deprecation_wrapper.py:119] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:74: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
-
-W0724 16:42:35.107357 4375664064 deprecation_wrapper.py:119] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:517: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
-
-W0724 16:42:35.109434 4375664064 deprecation_wrapper.py:119] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:4138: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+W0724 17:46:10.929434 4769732032 deprecation_wrapper.py:119] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:74: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
 
 </pre>
 </div>
@@ -13541,12 +13537,16 @@ Stored &#39;test_label&#39; (ndarray)
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>W0724 16:42:35.169432 4375664064 deprecation_wrapper.py:119] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:133: The name tf.placeholder_with_default is deprecated. Please use tf.compat.v1.placeholder_with_default instead.
+<pre>W0724 17:46:10.948634 4769732032 deprecation_wrapper.py:119] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:517: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
 
-W0724 16:42:35.175247 4375664064 deprecation.py:506] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+W0724 17:46:10.950520 4769732032 deprecation_wrapper.py:119] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:4138: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+W0724 17:46:11.013468 4769732032 deprecation_wrapper.py:119] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:133: The name tf.placeholder_with_default is deprecated. Please use tf.compat.v1.placeholder_with_default instead.
+
+W0724 17:46:11.019496 4769732032 deprecation.py:506] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
 Instructions for updating:
 Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
-W0724 16:42:35.218873 4375664064 deprecation_wrapper.py:119] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:174: The name tf.get_default_session is deprecated. Please use tf.compat.v1.get_default_session instead.
+W0724 17:46:11.061269 4769732032 deprecation_wrapper.py:119] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:174: The name tf.get_default_session is deprecated. Please use tf.compat.v1.get_default_session instead.
 
 </pre>
 </div>
@@ -13588,9 +13588,9 @@ Stored &#39;model&#39; (Sequential)
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>/Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/engine/saving.py:292: UserWarning: No training configuration found in save file: the model was *not* compiled. Compile it manually.
   warnings.warn(&#39;No training configuration found in save file: &#39;
-W0724 16:42:35.424621 4375664064 deprecation_wrapper.py:119] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/optimizers.py:790: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+W0724 17:46:11.272973 4769732032 deprecation_wrapper.py:119] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/optimizers.py:790: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
 
-W0724 16:42:35.506423 4375664064 deprecation.py:323] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_grad.py:1250: add_dispatch_support.&lt;locals&gt;.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+W0724 17:46:11.363924 4769732032 deprecation.py:323] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_grad.py:1250: add_dispatch_support.&lt;locals&gt;.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
 Instructions for updating:
 Use tf.where in 2.0, which has the same broadcast rule as np.where
 </pre>
@@ -13605,46 +13605,47 @@ Use tf.where in 2.0, which has the same broadcast rule as np.where
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Train on 128 samples, validate on 10000 samples
 Epoch 1/20
-128/128 [==============================] - 0s 3ms/step - loss: 2.4230 - acc: 0.0781 - val_loss: 2.1034 - val_acc: 0.2888
+128/128 [==============================] - 0s 3ms/step - loss: 2.3919 - acc: 0.0547 - val_loss: 2.0613 - val_acc: 0.4241
 Epoch 2/20
-128/128 [==============================] - 0s 1ms/step - loss: 1.9053 - acc: 0.3125 - val_loss: 2.0526 - val_acc: 0.4704
+128/128 [==============================] - 0s 1ms/step - loss: 1.7856 - acc: 0.5000 - val_loss: 1.7812 - val_acc: 0.4497
 Epoch 3/20
-128/128 [==============================] - 0s 1ms/step - loss: 2.0535 - acc: 0.4922 - val_loss: 1.7504 - val_acc: 0.4087
+128/128 [==============================] - 0s 1ms/step - loss: 1.6781 - acc: 0.4844 - val_loss: 1.6944 - val_acc: 0.4478
 Epoch 4/20
-128/128 [==============================] - 0s 1ms/step - loss: 1.5513 - acc: 0.4531 - val_loss: 1.4815 - val_acc: 0.5940
+128/128 [==============================] - 0s 1ms/step - loss: 1.3495 - acc: 0.5000 - val_loss: 1.5864 - val_acc: 0.5021
 Epoch 5/20
-128/128 [==============================] - 0s 1ms/step - loss: 1.1828 - acc: 0.7266 - val_loss: 1.2877 - val_acc: 0.5201
+128/128 [==============================] - 0s 1ms/step - loss: 1.2549 - acc: 0.6484 - val_loss: 1.3217 - val_acc: 0.5690
 Epoch 6/20
-128/128 [==============================] - 0s 1ms/step - loss: 0.9305 - acc: 0.6484 - val_loss: 1.1600 - val_acc: 0.6141
+128/128 [==============================] - 0s 1ms/step - loss: 1.0582 - acc: 0.6875 - val_loss: 1.2155 - val_acc: 0.5925
 Epoch 7/20
-128/128 [==============================] - 0s 1ms/step - loss: 0.8993 - acc: 0.7266 - val_loss: 1.2814 - val_acc: 0.5810
+128/128 [==============================] - 0s 1ms/step - loss: 0.7533 - acc: 0.8125 - val_loss: 1.0218 - val_acc: 0.6484
 Epoch 8/20
-128/128 [==============================] - 0s 1ms/step - loss: 0.8862 - acc: 0.7188 - val_loss: 1.0263 - val_acc: 0.6307
+128/128 [==============================] - 0s 1ms/step - loss: 0.6593 - acc: 0.7812 - val_loss: 1.3204 - val_acc: 0.5039
 Epoch 9/20
-128/128 [==============================] - 0s 1ms/step - loss: 0.6509 - acc: 0.7656 - val_loss: 1.0996 - val_acc: 0.5824
+128/128 [==============================] - 0s 1ms/step - loss: 0.7608 - acc: 0.6797 - val_loss: 1.3602 - val_acc: 0.6352
 Epoch 10/20
-128/128 [==============================] - 0s 1ms/step - loss: 0.6967 - acc: 0.7266 - val_loss: 1.1217 - val_acc: 0.5892
+128/128 [==============================] - 0s 1ms/step - loss: 0.9961 - acc: 0.7422 - val_loss: 1.0326 - val_acc: 0.6248
 Epoch 11/20
-128/128 [==============================] - 0s 1ms/step - loss: 0.7877 - acc: 0.7188 - val_loss: 1.1710 - val_acc: 0.5681
+128/128 [==============================] - 0s 1ms/step - loss: 0.6272 - acc: 0.7422 - val_loss: 1.0093 - val_acc: 0.6408
 Epoch 12/20
-128/128 [==============================] - 0s 1ms/step - loss: 0.6979 - acc: 0.6875 - val_loss: 1.1933 - val_acc: 0.5879
+128/128 [==============================] - 0s 1ms/step - loss: 0.5195 - acc: 0.8438 - val_loss: 0.8773 - val_acc: 0.6846
 Epoch 13/20
-128/128 [==============================] - 0s 1ms/step - loss: 0.7147 - acc: 0.8047 - val_loss: 1.0622 - val_acc: 0.6732
+128/128 [==============================] - 0s 1ms/step - loss: 0.3785 - acc: 0.9062 - val_loss: 0.8700 - val_acc: 0.6736
 Epoch 14/20
-128/128 [==============================] - 0s 1ms/step - loss: 0.5105 - acc: 0.8594 - val_loss: 0.8533 - val_acc: 0.6958
+128/128 [==============================] - 0s 1ms/step - loss: 0.3180 - acc: 0.9453 - val_loss: 0.8651 - val_acc: 0.6924
 Epoch 15/20
-128/128 [==============================] - 0s 1ms/step - loss: 0.3758 - acc: 0.9219 - val_loss: 0.9004 - val_acc: 0.6669
+128/128 [==============================] - 0s 1ms/step - loss: 0.3217 - acc: 0.9141 - val_loss: 1.0772 - val_acc: 0.6310
 Epoch 16/20
-128/128 [==============================] - 0s 1ms/step - loss: 0.3440 - acc: 0.9141 - val_loss: 0.8756 - val_acc: 0.7033
+128/128 [==============================] - 0s 1ms/step - loss: 0.4713 - acc: 0.8359 - val_loss: 1.2868 - val_acc: 0.6186
 Epoch 17/20
-128/128 [==============================] - 0s 1ms/step - loss: 0.3449 - acc: 0.9141 - val_loss: 1.3262 - val_acc: 0.5793
+128/128 [==============================] - 0s 1ms/step - loss: 0.6408 - acc: 0.7656 - val_loss: 1.3777 - val_acc: 0.5903
 Epoch 18/20
-128/128 [==============================] - 0s 1ms/step - loss: 0.4597 - acc: 0.8281 - val_loss: 1.1132 - val_acc: 0.7010
+128/128 [==============================] - 0s 1ms/step - loss: 0.6909 - acc: 0.7656 - val_loss: 1.2181 - val_acc: 0.5791
 Epoch 19/20
-128/128 [==============================] - 0s 1ms/step - loss: 0.5867 - acc: 0.8594 - val_loss: 0.8883 - val_acc: 0.6791
+128/128 [==============================] - 0s 1ms/step - loss: 0.4952 - acc: 0.7578 - val_loss: 1.0807 - val_acc: 0.6822
 Epoch 20/20
-128/128 [==============================] - 0s 1ms/step - loss: 0.2758 - acc: 0.9531 - val_loss: 0.8474 - val_acc: 0.7082
+128/128 [==============================] - 0s 1ms/step - loss: 0.5592 - acc: 0.8516 - val_loss: 0.8090 - val_acc: 0.7209
 Stored &#39;history&#39; (History)
+Stored &#39;score&#39; (list)
 </pre>
 </div>
 </div>
@@ -13700,8 +13701,6 @@ Stored &#39;history&#39; (History)
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>importing Jupyter notebook from output.ipynb
-[0.11718455487646338, 0.9841] from output
-yayyy
 </pre>
 </div>
 </div>
