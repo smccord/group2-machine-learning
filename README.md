@@ -23,11 +23,17 @@
      
   2. There are two options for running the docker image
   
-     **Option 1:** Run the image with the command below if you would like to automatically initiate and run the neural networks. You will be taken to the shell and the models will be automatically deployed for the datasets you specify.
+     **Option 1:** Run the image with the command below if you would like to automatically initiate and run the neural networks. 
   
        ```docker run -e dataset=mnist -it sprince399/mlnotebook sh ```
   
       The default is to run a neural net classifier on MNIST. If you would like to specify a dataset, you can add it with the ```-e``` tag (see example above). Options are mnist, fashion, whale. 
+      
+      Once you are in the shell, run the commands below:
+      ```
+      cd cyber-carpentry-group2-machine-learning-*
+      python run_main.py my_input_file --int_param ${dataset}
+      ```
       
       Now the neural network builder and classifier has launched! When it is finished, you will see an output file with a text and pdf summary of the results. Compare your results to the example output below
       
@@ -36,7 +42,7 @@
        ```docker run -p 80:8888 sprince399/mlnotebook```
        
        Set the working directory
-       ```cd cyber-carpentry-group2-machine-learning-14f2f57```
+       ```cd cyber-carpentry-group2-machine-learning-*```
        
         _If you are on your own machine_ go to your browser and type in http://127.0.0.1:80. You will be prompted to enter a token which you can copy from the prompt. 
         
