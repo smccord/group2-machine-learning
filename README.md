@@ -55,11 +55,13 @@
 
 ### MNIST ###
 [Model summary](mnist_model_results_summary.txt)
-[Model performance](results/mnist_results_summary_plots.pdf)
+
+![Model performance](results/mnist_results_summary_plots.pdf)
 
 ### fashion MNIST ###
 [Model summary](fashion_model_results_summary.txt)
-[Model performance](results/fashion_results_summary_plots.pdf)
+
+![Model performance](results/fashion_results_summary_plots.pdf)
 
 ## Group 2 Useful Links
 
