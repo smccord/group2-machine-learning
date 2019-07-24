@@ -32,7 +32,7 @@
       Once you are in the shell, run the commands below:
       ```
       cd cyber-carpentry-group2-machine-learning-*
-      python run_main.py my_input_file --int_param ${dataset}
+      python run_main.py dataset --int_param ${dataset}
       ```
       
       Now the neural network builder and classifier has launched! When it is finished, you will see an output file with a text and pdf summary of the results. Compare your results to the example output below
