@@ -54,12 +54,12 @@
 ## Compare your results to the ones below! 
 
 ### MNIST ###
-[Model summary](mnist_model_results_summary.txt)
+[Model summary](results/mnist_model_results_summary.txt)
 
 [Model performance](results/mnist_results_summary_plots.pdf)
 
 ### fashion MNIST ###
-[Model summary](fashion_model_results_summary.txt)
+[Model summary](results/fashion_model_results_summary.txt)
 
 [Model performance](results/fashion_results_summary_plots.pdf)
 
