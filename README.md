@@ -35,6 +35,9 @@
      
        ```docker run -p 80:8888 sprince399/mlnotebook```
        
+       Set the working directory
+       ```cd cyber-carpentry-group2-machine-learning-14f2f57```
+       
         _If you are on your own machine_ go to your browser and type in http://127.0.0.1:80. You will be prompted to enter a token which you can copy from the prompt. 
         
         _If you are on a Jetstream instance_ copy the IP address from the instance. Then in your own browser type in http://JetstreamIPAddress:80. You will be prompted to enter a token which you can copy from the prompt. 
