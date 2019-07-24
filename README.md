@@ -54,12 +54,12 @@
 ## Compare your results to the ones below! 
 
 ### MNIST ###
-Summary of model and performance
-Loss and accuracy over epochs
+[Model summary](mnist_model_results_summary.txt)
+[Model performance](results/mnist_results_summary_plots.pdf)
 
 ### fashion MNIST ###
-Summary of model and performance
-Loss and accuracy over epochs
+[Model summary](fashion_model_results_summary.txt)
+[Model performance](results/fashion_results_summary_plots.pdf)
 
 ## Group 2 Useful Links
 
