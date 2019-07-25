@@ -41,6 +41,7 @@ Note: All of the commands below can also be launched from the terminal on your l
  2. Once you are in the shell, run the command below:
      
      ```
+     cd cyber-carpentry-group2-*
      snakemake
      ```
  3. Optional: Delete snakemake results
