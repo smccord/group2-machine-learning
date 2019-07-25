@@ -15,10 +15,10 @@ Note: All of the commands below can also be launched from the terminal on your l
 ### Create a volume in the virtual machine to store your results ###
   ```
   docker volume create results
-  docker volume inspect results
-  sudo chown :100 /var/lib/docker/volumes/results/_data
-  sudo chmod 775 /var/lib/docker/volumes/results/_data
-  sudo chmod g+s /var/lib/docker/volumes/results/_data
+  export MYVOLDIR=$(docker volume inspect --format '{{ .Mountpoint }}' results)
+  sudo chown :100 ${MYVOLDIR}
+  sudo chmod 775 ${MYVOLDIR}
+  sudo chmod g+s ${MYVOLDIR}
   ```
   
 ### Run the docker image ###
