@@ -30,6 +30,7 @@ Note: All of the commands below can also be launched from the terminal on your l
   
   2. Now you will create a volume so you can store your results. Follow the commands below to create the volume and give the docker image the correct permissions. 
   
+  ```
   docker volume create results  #creates the volume
   export MYVOLDIR=$(docker volume inspect --format '{{ .Mountpoint }}' results) #gets the directory where the file is stored
   sudo chown :100 ${MYVOLDIR} #set the volume directory group to that of the docker image
@@ -37,10 +38,7 @@ Note: All of the commands below can also be launched from the terminal on your l
   sudo chmod g+s ${MYVOLDIR} #sets the permissions
   ```
   
-### Run the docker image ###
-  
-
- ### Start the neural network classifiers ###    
+#### Start the neural network classifiers ####    
  
  There are multiple options for using the neural networks. We suggest starting with Option 1 for optimal reproducibility. 
   - [Option 1](README.md#option-1): Run both mnist and fashion mnist datasets in parallel.
