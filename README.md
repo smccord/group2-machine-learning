@@ -35,7 +35,7 @@ Note: All of the commands below can also be launched from the terminal on your l
  1. Use the command below to find your current directory and make a folder for your results
  
    ``` 
-      export RESULTSDIR=$(pwd)+results
+      export RESULTSDIR=$(pwd)/results
    ```
    
  1. Enter the command below to run the docker image.
