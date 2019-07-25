@@ -47,7 +47,7 @@ Note: All of the commands below can also be launched from the terminal on your l
      snakemake
      ```
       
-   The neural network model and classifier has launched! When they are finished, you will find the files summarizing the output and results of the model in the local path you specified on your computer. Compare your results here.   
+   The neural network model and classifier has launched! When they are finished, you will find the files summarizing the output and results of the model in the local path you specified on your computer. Compare your results [here!](README.md#example-results)   
       
 #### **Option 2:** ####
 Run mnist or fashion mnist datasets on their own.
@@ -64,7 +64,7 @@ Run mnist or fashion mnist datasets on their own.
       cd cyber-carpentry-group2-machine-learning-*
       python run_main.py dataset --int_param mnist.txt
       ```
-  The neural network model and classifier has launched! When they are finished, you will find the files summarizing the output and results of the model in the local path you specified on your computer. Compare your results here.  
+  The neural network model and classifier has launched! When they are finished, you will find the files summarizing the output and results of the model in the local path you specified on your computer. Compare your results [here!](README.md#example-results)   
 
 #### **Option 3:** ####
 
