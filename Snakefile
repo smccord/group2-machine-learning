@@ -1,3 +1,5 @@
+cd cyber-carpentry-group2-machine-learning-*
+
 rule all:
         output: "results/mnist_model_results_summary.txt", "results/fashion_model_results_summary.txt"
 
