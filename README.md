@@ -32,10 +32,16 @@ Note: All of the commands below can also be launched from the terminal on your l
 #### **Option 1:** ####
  Run both mnist and fashion mnist datasets in parallel. 
  
- 1. Enter the command below to run the docker image. Fill in the section ```/local/path/for/results/``` with the location on your instance and/or local computer 
+ 1. Use the command below to find your current directory and make a folder for your results
  
    ``` 
-     docker run -v /local/path/for/results/:/home/jovyan/results -it sprince399/mlnotebook sh
+      export RESULTSDIR=$(pwd)+results
+   ```
+   
+ 1. Enter the command below to run the docker image.
+ 
+   ``` 
+     docker run -v ${RESULTSDIR}:/home/jovyan/results -it sprince399/mlnotebook sh
    ```
     
  2. Once you are in the shell, run the command below:
