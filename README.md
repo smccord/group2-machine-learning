@@ -1,13 +1,5 @@
 # group2-machine-learning
 
-# Introduction
-
-## Project phases
-- Making the repository and the required materials.
-- Build docker containers for the MNIST analyses
-- Use workflow tools + cloud/HPC computing to run MNIST analyses
-- Repeat steps above for fashion MNIST and humback whale classification if time.
-
 ## Instructions
 
 ### Initiate a virtual machine through a cloud server
@@ -28,9 +20,9 @@ Note: All of the commands below can also be launched from the terminal on your l
  ### Start the neural network classifiers ###    
  
  There are multiple options for using the neural networks. We suggest starting with Option 1 for optimal reproducibility. 
-  - Option 1: Run both mnist and fashion mnist datasets in parallel.
-  - Option 2: Run mnist or fashion mnist datasets on their own.
-  - Option 3: Explore the code via jupyter notebooks.
+  - [Option 1](README.md#option-1): Run both mnist and fashion mnist datasets in parallel.
+  - [Option 2](README.md#option-2): Run mnist or fashion mnist datasets on their own.
+  - [Option 3](README.md#option-3): Explore the code via jupyter notebooks.
  
 #### **Option 1:** ####
  Run both mnist and fashion mnist datasets in parallel. 
