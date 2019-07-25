@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-fashion
-=======
-fashion
->>>>>>> 4b5a6079730a97fe496b9bb7ddbdc014dc795538

@@ -1,4 +1,4 @@
-fashion Summary of the neural network model:
+mnist Summary of the neural network model:
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
@@ -16,5 +16,5 @@ Total params: 669,706
 Trainable params: 669,706
 Non-trainable params: 0
 _________________________________________________________________
-Test loss: 0.8958386017799378
-Test accuracy: 0.7074
+Test loss: 1.1746487716674805
+Test accuracy: 0.6678

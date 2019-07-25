@@ -1,0 +1,4 @@
+data mnist
+batch_size 256
+num_classes 10
+epochs 10
