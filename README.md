@@ -80,9 +80,9 @@ Run mnist or fashion mnist datasets on their own.
    _If you are on a Jetstream instance_
    Copy the IP address from the instance. Then in your own browser type in http://JetstreamIPAddress:80. You will be prompted to enter a token which you can copy from the prompt. 
             
-       Now you can play around with the neural network models! Select any of the files to explore. 
+ Now you can play around with the neural network models! Select any of the files to explore. 
    
-## Compare your results to the ones below! 
+## Example results ##
 
 ### MNIST ###
 [Model summary](results/mnist_model_results_summary.txt)
