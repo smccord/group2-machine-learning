@@ -38,6 +38,11 @@ Note: All of the commands below can also be launched from the terminal on your l
      ```
      snakemake
      ```
+ 3. Optional: Delete snakemake results
+    ```
+    snakemake some_target --delete-all-output
+    ```
+ 4. 
       
    The neural network model and classifier has launched! When they are finished, you will find the files summarizing the output and results of the model in the local path you specified on your computer. Compare your results [here!](README.md#example-results)   
       
