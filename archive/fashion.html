@@ -13130,6 +13130,7 @@ div#notebook {
 <span class="kn">import</span> <span class="nn">io</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">types</span>
 <span class="kn">from</span> <span class="nn">IPython</span> <span class="k">import</span> <span class="n">get_ipython</span>
 <span class="kn">from</span> <span class="nn">nbformat</span> <span class="k">import</span> <span class="n">read</span>
+<span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">IPython.core.interactiveshell</span> <span class="k">import</span> <span class="n">InteractiveShell</span>
 <span class="n">allow_stdin</span><span class="o">=</span><span class="kc">True</span>
 </pre></div>
@@ -13150,13 +13151,11 @@ div#notebook {
 <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">CONFIG_FILE</span><span class="p">):</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">CONFIG_FILE</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">sys</span><span class="o">.</span><span class="n">argv</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-
-<span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
-<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;dataset&quot;</span><span class="p">,</span><span class="n">help</span><span class="o">=</span><span class="s2">&quot;Input image, directory, or npy.&quot;</span><span class="p">)</span>
-<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--int_param&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;mnist&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;dataset, mnist or fashion&quot;</span><span class="p">)</span>
-<span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
-<span class="n">p</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">int_param</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">dataset</span><span class="p">,</span><span class="n">p</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">a</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">:])</span>
+<span class="c1"># p = args.int_param</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">b</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># gives &quot;mnist&quot; or &quot;fashion&quot; </span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;dataset is &quot;</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13173,11 +13172,30 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>dataset fashion
+<pre>dataset is  fashion
 </pre>
 </div>
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># with open(&quot;/data/params.txt&quot;, &quot;r&quot;) as f:</span>
+<span class="c1">#     content = f.readline()</span>
+<span class="c1"># lines = [content.rstrip(&#39;\n&#39;) for line in content] # [x.strip() for x in content]    </span>
+<span class="c1"># r.find()</span>
+<span class="n">batch_size</span> <span class="o">=</span>  <span class="mi">128</span>
+<span class="n">num_classes</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">epochs</span> <span class="o">=</span> <span class="mi">20</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
@@ -13192,7 +13210,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">mydataset</span> <span class="o">=</span> <span class="n">p</span>
@@ -13257,7 +13275,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">find_notebook</span><span class="p">(</span><span class="n">fullname</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -13287,7 +13305,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">NotebookLoader</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -13340,7 +13358,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">NotebookFinder</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -13370,7 +13388,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sys</span><span class="o">.</span><span class="n">meta_path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">NotebookFinder</span><span class="p">())</span>
@@ -13391,13 +13409,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">128</span>
-<span class="n">num_classes</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">epochs</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="o">%</span><span class="k">store</span> num_classes
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">store</span> num_classes
 <span class="o">%</span><span class="k">store</span> epochs
 <span class="o">%</span><span class="k">store</span> batch_size
 </pre></div>
@@ -13429,7 +13444,7 @@ Stored &#39;batch_size&#39; (int)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">mydataset</span> <span class="o">==</span> <span class="s2">&quot;mnist&quot;</span><span class="p">:</span>
@@ -13478,7 +13493,7 @@ Stored &#39;y_test&#39; (ndarray)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># %run ./train.ipynb</span>
@@ -13511,8 +13526,17 @@ Stored &#39;y_test&#39; (ndarray)
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>WARNING: Logging before flag parsing goes to stderr.
-W0724 17:46:10.929434 4769732032 deprecation_wrapper.py:119] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:74: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+W0725 10:35:00.006227 4532934080 deprecation_wrapper.py:119] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:74: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
 
+W0725 10:35:00.020128 4532934080 deprecation_wrapper.py:119] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:517: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+W0725 10:35:00.022228 4532934080 deprecation_wrapper.py:119] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:4138: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+W0725 10:35:00.031740 4532934080 deprecation_wrapper.py:119] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:133: The name tf.placeholder_with_default is deprecated. Please use tf.compat.v1.placeholder_with_default instead.
+
+W0725 10:35:00.037444 4532934080 deprecation.py:506] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
 </pre>
 </div>
 </div>
@@ -13537,16 +13561,11 @@ Stored &#39;test_label&#39; (ndarray)
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>W0724 17:46:10.948634 4769732032 deprecation_wrapper.py:119] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:517: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+<pre>W0725 10:35:00.129440 4532934080 deprecation_wrapper.py:119] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:174: The name tf.get_default_session is deprecated. Please use tf.compat.v1.get_default_session instead.
 
-W0724 17:46:10.950520 4769732032 deprecation_wrapper.py:119] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:4138: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
-
-W0724 17:46:11.013468 4769732032 deprecation_wrapper.py:119] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:133: The name tf.placeholder_with_default is deprecated. Please use tf.compat.v1.placeholder_with_default instead.
-
-W0724 17:46:11.019496 4769732032 deprecation.py:506] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
-Instructions for updating:
-Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
-W0724 17:46:11.061269 4769732032 deprecation_wrapper.py:119] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:174: The name tf.get_default_session is deprecated. Please use tf.compat.v1.get_default_session instead.
+/Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/engine/saving.py:292: UserWarning: No training configuration found in save file: the model was *not* compiled. Compile it manually.
+  warnings.warn(&#39;No training configuration found in save file: &#39;
+W0725 10:35:00.323754 4532934080 deprecation_wrapper.py:119] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/optimizers.py:790: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
 
 </pre>
 </div>
@@ -13586,11 +13605,7 @@ Stored &#39;model&#39; (Sequential)
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>/Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/engine/saving.py:292: UserWarning: No training configuration found in save file: the model was *not* compiled. Compile it manually.
-  warnings.warn(&#39;No training configuration found in save file: &#39;
-W0724 17:46:11.272973 4769732032 deprecation_wrapper.py:119] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/keras/optimizers.py:790: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
-
-W0724 17:46:11.363924 4769732032 deprecation.py:323] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_grad.py:1250: add_dispatch_support.&lt;locals&gt;.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+<pre>W0725 10:35:00.401111 4532934080 deprecation.py:323] From /Users/Toktam/anaconda3/lib/python3.7/site-packages/tensorflow/python/ops/math_grad.py:1250: add_dispatch_support.&lt;locals&gt;.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
 Instructions for updating:
 Use tf.where in 2.0, which has the same broadcast rule as np.where
 </pre>
@@ -13605,45 +13620,45 @@ Use tf.where in 2.0, which has the same broadcast rule as np.where
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Train on 128 samples, validate on 10000 samples
 Epoch 1/20
-128/128 [==============================] - 0s 3ms/step - loss: 2.3919 - acc: 0.0547 - val_loss: 2.0613 - val_acc: 0.4241
+128/128 [==============================] - 0s 3ms/step - loss: 2.3619 - acc: 0.1094 - val_loss: 1.9018 - val_acc: 0.3618
 Epoch 2/20
-128/128 [==============================] - 0s 1ms/step - loss: 1.7856 - acc: 0.5000 - val_loss: 1.7812 - val_acc: 0.4497
+128/128 [==============================] - 0s 1ms/step - loss: 1.6598 - acc: 0.4531 - val_loss: 2.2570 - val_acc: 0.4345
 Epoch 3/20
-128/128 [==============================] - 0s 1ms/step - loss: 1.6781 - acc: 0.4844 - val_loss: 1.6944 - val_acc: 0.4478
+128/128 [==============================] - 0s 1ms/step - loss: 2.2763 - acc: 0.4141 - val_loss: 1.5799 - val_acc: 0.4291
 Epoch 4/20
-128/128 [==============================] - 0s 1ms/step - loss: 1.3495 - acc: 0.5000 - val_loss: 1.5864 - val_acc: 0.5021
+128/128 [==============================] - 0s 1ms/step - loss: 1.3729 - acc: 0.5312 - val_loss: 1.3928 - val_acc: 0.5218
 Epoch 5/20
-128/128 [==============================] - 0s 1ms/step - loss: 1.2549 - acc: 0.6484 - val_loss: 1.3217 - val_acc: 0.5690
+128/128 [==============================] - 0s 1ms/step - loss: 1.1395 - acc: 0.7031 - val_loss: 1.2390 - val_acc: 0.5188
 Epoch 6/20
-128/128 [==============================] - 0s 1ms/step - loss: 1.0582 - acc: 0.6875 - val_loss: 1.2155 - val_acc: 0.5925
+128/128 [==============================] - 0s 1ms/step - loss: 0.9485 - acc: 0.6094 - val_loss: 1.2563 - val_acc: 0.5756
 Epoch 7/20
-128/128 [==============================] - 0s 1ms/step - loss: 0.7533 - acc: 0.8125 - val_loss: 1.0218 - val_acc: 0.6484
+128/128 [==============================] - 0s 1ms/step - loss: 0.8931 - acc: 0.7422 - val_loss: 1.2777 - val_acc: 0.5403
 Epoch 8/20
-128/128 [==============================] - 0s 1ms/step - loss: 0.6593 - acc: 0.7812 - val_loss: 1.3204 - val_acc: 0.5039
+128/128 [==============================] - 0s 1ms/step - loss: 0.8090 - acc: 0.7109 - val_loss: 1.1469 - val_acc: 0.6750
 Epoch 9/20
-128/128 [==============================] - 0s 1ms/step - loss: 0.7608 - acc: 0.6797 - val_loss: 1.3602 - val_acc: 0.6352
+128/128 [==============================] - 0s 1ms/step - loss: 0.7547 - acc: 0.7656 - val_loss: 1.1915 - val_acc: 0.5783
 Epoch 10/20
-128/128 [==============================] - 0s 1ms/step - loss: 0.9961 - acc: 0.7422 - val_loss: 1.0326 - val_acc: 0.6248
+128/128 [==============================] - 0s 1ms/step - loss: 0.7524 - acc: 0.7656 - val_loss: 1.2272 - val_acc: 0.6278
 Epoch 11/20
-128/128 [==============================] - 0s 1ms/step - loss: 0.6272 - acc: 0.7422 - val_loss: 1.0093 - val_acc: 0.6408
+128/128 [==============================] - 0s 1ms/step - loss: 0.7087 - acc: 0.7812 - val_loss: 1.0918 - val_acc: 0.5719
 Epoch 12/20
-128/128 [==============================] - 0s 1ms/step - loss: 0.5195 - acc: 0.8438 - val_loss: 0.8773 - val_acc: 0.6846
+128/128 [==============================] - 0s 1ms/step - loss: 0.5813 - acc: 0.7578 - val_loss: 1.0130 - val_acc: 0.6570
 Epoch 13/20
-128/128 [==============================] - 0s 1ms/step - loss: 0.3785 - acc: 0.9062 - val_loss: 0.8700 - val_acc: 0.6736
+128/128 [==============================] - 0s 1ms/step - loss: 0.6136 - acc: 0.8281 - val_loss: 1.1136 - val_acc: 0.6326
 Epoch 14/20
-128/128 [==============================] - 0s 1ms/step - loss: 0.3180 - acc: 0.9453 - val_loss: 0.8651 - val_acc: 0.6924
+128/128 [==============================] - 0s 1ms/step - loss: 0.4944 - acc: 0.8516 - val_loss: 0.8167 - val_acc: 0.7216
 Epoch 15/20
-128/128 [==============================] - 0s 1ms/step - loss: 0.3217 - acc: 0.9141 - val_loss: 1.0772 - val_acc: 0.6310
+128/128 [==============================] - 0s 1ms/step - loss: 0.3834 - acc: 0.9141 - val_loss: 0.9229 - val_acc: 0.6475
 Epoch 16/20
-128/128 [==============================] - 0s 1ms/step - loss: 0.4713 - acc: 0.8359 - val_loss: 1.2868 - val_acc: 0.6186
+128/128 [==============================] - 0s 2ms/step - loss: 0.3296 - acc: 0.9297 - val_loss: 0.8147 - val_acc: 0.7225
 Epoch 17/20
-128/128 [==============================] - 0s 1ms/step - loss: 0.6408 - acc: 0.7656 - val_loss: 1.3777 - val_acc: 0.5903
+128/128 [==============================] - 0s 1ms/step - loss: 0.3050 - acc: 0.9297 - val_loss: 1.0165 - val_acc: 0.6289
 Epoch 18/20
-128/128 [==============================] - 0s 1ms/step - loss: 0.6909 - acc: 0.7656 - val_loss: 1.2181 - val_acc: 0.5791
+128/128 [==============================] - 0s 1ms/step - loss: 0.2990 - acc: 0.8906 - val_loss: 1.0441 - val_acc: 0.6900
 Epoch 19/20
-128/128 [==============================] - 0s 1ms/step - loss: 0.4952 - acc: 0.7578 - val_loss: 1.0807 - val_acc: 0.6822
+128/128 [==============================] - 0s 1ms/step - loss: 0.4729 - acc: 0.8594 - val_loss: 0.9634 - val_acc: 0.6530
 Epoch 20/20
-128/128 [==============================] - 0s 1ms/step - loss: 0.5592 - acc: 0.8516 - val_loss: 0.8090 - val_acc: 0.7209
+128/128 [==============================] - 0s 1ms/step - loss: 0.2832 - acc: 0.9062 - val_loss: 0.8958 - val_acc: 0.7074
 Stored &#39;history&#39; (History)
 Stored &#39;score&#39; (list)
 </pre>
@@ -13664,7 +13679,7 @@ Stored &#39;score&#39; (list)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># %run ./test.ipynb</span>
@@ -13679,7 +13694,7 @@ Stored &#39;score&#39; (list)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># %run ./output.ipynb</span>
@@ -13711,7 +13726,7 @@ Stored &#39;score&#39; (list)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finished!&quot;</span><span class="p">)</span>
