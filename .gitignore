@@ -2,5 +2,4 @@
 *.config_ipynb
 *.DS_Store
 *.html
-*.txt
 *.pdf
