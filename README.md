@@ -13,6 +13,8 @@ Machine learning classifiers, such as those found in tensorflow, are powerful to
   2. ```<data>_model_results_summary.txt```: Summary of the model runs
   3. ```<data>_results_summary_plots.pdf```: Graphical summary of model results
   
+  ```snakemake``` will take care of supplying the inputs to the python code and printing the results to ```/results``` mounted on your Docker volume. So the above is just context for troubleshooting or extending the workflow. 
+  
 ## Instructions
 
 ### Initiate a virtual machine through a cloud server
@@ -133,9 +135,34 @@ Run mnist or fashion mnist datasets on their own.
 
 [Model performance](results/fashion_results_summary_plots.pdf)
 
+## Github file metadata
+```Dockerfile``` Defines the Docker image build. This image is also set to autobuild on [Docker Hub](https://hub.docker.com/r/sprince399/mlnotebook)
 
-## Group 2 Useful Links
+```Snakefile``` Defines the ```snakemake``` workflow and iterates over datasets
 
-[HackMD Notes](https://hackmd.io/@stephprince/r1BFBO7MH)
+```main.ipynb``` Runs ``train.ipynb```, ```test.ipynb```, and ```output.ipynb```
+
+```model.ipynb``` Builds the tensorflow models
+
+```output.ipynb``` Produces output summary files
+
+```setup_docker.sh``` Sets up the Dockerfile
+
+```test.ipynb``` Tests the model
+
+```train.ipynb``` Trains the model
+
+```run_main.py``` Runs the ```main.ipynb```. This enables Running from  ```snakemake```
+
+```\archive``` Archived example reports
+
+```hooks``` Enables version control on Dockerfiles
+
+```data``` Holds data input files. 
+
+
+## Useful Links
+
+[Group 2 HackMD Notes](https://hackmd.io/@stephprince/r1BFBO7MH)
 
 [Planning Notes](https://hackmd.io/8IlRqMagSr-wxBMXtmtgnA?both#Planning)
