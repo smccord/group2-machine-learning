@@ -14,31 +14,20 @@ Note: All of the commands below can also be launched from the terminal on your l
 
 ### Set up the docker image and volume ###
   
-  1. Pull the docker image with the command below. You can use the `docker images` to check if you successfully pulled the image. 
-  
-     ``` 
-     docker pull sprince399/mlnotebook
-     ```      
-     
-  As an alternate option (e.g., you want to change the docker image), you could pull the dockerfile from the GitHub page with the command below. 
+  1. Clone the github repo with the relevant dockerfile.
   
      ```
      git clone https://github.com/cyber-carpentry/group2-machine-learning/
      cd group2-machine-learning
-     docker build -t sprince399/mlnotebook .
      ```
   
-  2. Now you will create a volume so you can store your results. Follow the commands below to create the volume and give the docker image the correct permissions. 
+  2. Now you will run a shell script to build your docker image and create a volume to store your results. 
   
-  ```
-  docker volume create results  #creates the volume
-  export MYVOLDIR=$(docker volume inspect --format '{{ .Mountpoint }}' results) #gets the directory where the file is stored
-  sudo chown :100 ${MYVOLDIR} #set the volume directory group to that of the docker image
-  sudo chmod 775 ${MYVOLDIR} #gives read/write access
-  sudo chmod g+s ${MYVOLDIR} #sets the permissions
-  ```
+    ```
+    sh setup_docker.sh
+    ```
   
-#### Start the neural network classifiers ####    
+### Start the neural network classifiers ###    
  
  There are multiple options for using the neural networks. We suggest starting with Option 1 for optimal reproducibility. 
   - [Option 1](README.md#option-1): Run both mnist and fashion mnist datasets in parallel.
@@ -48,26 +37,22 @@ Note: All of the commands below can also be launched from the terminal on your l
 #### **Option 1:** ####
  Run both mnist and fashion mnist datasets in parallel. 
 
- 1. Enter the command below to run the docker image.
+  1. Enter the command below to run the docker image.
  
-   ``` 
+     ``` 
      docker run --rm --mount source=results,target=/home/jovyan/results -it sprince399/mlnotebook sh
-   ```
+     ```
     
- 2. Once you are in the shell, run the command below:
+  2. Once you are in the shell, run the command below:
      
      ```
      cd cyber-carpentry-group2-*
      snakemake
      ```
      
- 3. Optional: Delete snakemake results
-    ```
-    snakemake some_target --delete-all-output
-    ```
- 4. 
-      
-   The neural network model and classifier has launched! When they are finished, you will find the files summarizing the output and results of the model in the volume path that was previously created. To access them enter the command below.
+   The neural network model and classifier has launched!
+   
+  3. When they are finished, you will find the files summarizing the output and results of the model in the /home/jovyan/results folder. You can also access these files outside of the Jetstream instance by entering the command below.
   
   ```
   sudo cat ${MYVOLDIR}/fileyouwanttolookat
@@ -78,10 +63,17 @@ Note: All of the commands below can also be launched from the terminal on your l
       
   Compare your results [here!](README.md#example-results)  
   
+  4. Optional: To rerun the classifier inside the container, first delete the snakemake results with the command below.
+    
+     ```
+     snakemake some_target --delete-all-output
+     ```
+  
+  
 #### **Option 2:** ####
 Run mnist or fashion mnist datasets on their own.
 
- 1. Enter the command below to run the docker image. Fill in the section ```/local/path/for/results/``` with the location on your instance and/or local computer 
+ 1. Enter the command below to run the docker image. Fill in the section `/local/path/for/results/` with the location on your instance and/or local computer 
  
    ``` 
      docker run --rm --mount source=results,target=/home/jovyan/results -it sprince399/mlnotebook sh
