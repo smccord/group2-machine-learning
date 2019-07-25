@@ -12,26 +12,33 @@ Machine learning classifiers, such as those found in tensorflow, are powerful to
   
 Note: All of the commands below can also be launched from the terminal on your local computer if you have Docker installed.
 
-### Create a volume in the virtual machine to store your results ###
-  ```
-  docker volume create results
-  export MYVOLDIR=$(docker volume inspect --format '{{ .Mountpoint }}' results)
-  sudo chown :100 ${MYVOLDIR}
-  sudo chmod 775 ${MYVOLDIR}
-  sudo chmod g+s ${MYVOLDIR}
-  ```
+### Set up the docker image and volume ###
   
-### Run the docker image ###
-  1. Pull the docker image with the command below. You can use ``` docker images ``` to check if you successfully pulled the image. 
+  1. Pull the docker image with the command below. You can use the `docker images` to check if you successfully pulled the image. 
   
      ``` 
      docker pull sprince399/mlnotebook
-     ```         
-  2. Alternate option: pull from the GitHub page
+     ```      
+     
+  As an alternate option (e.g., you want to change the docker image), you could pull the dockerfile from the GitHub page with the command below. 
+  
      ```
      git clone https://github.com/cyber-carpentry/group2-machine-learning/
      cd group2-machine-learning
      docker build -t sprince399/mlnotebook .
+     ```
+  
+  2. Now you will create a volume so you can store your results. Follow the commands below to create the volume and give the docker image the correct permissions. 
+  
+  docker volume create results  #creates the volume
+  export MYVOLDIR=$(docker volume inspect --format '{{ .Mountpoint }}' results) #gets the directory where the file is stored
+  sudo chown :100 ${MYVOLDIR} #set the volume directory group to that of the docker image
+  sudo chmod 775 ${MYVOLDIR} #gives read/write access
+  sudo chmod g+s ${MYVOLDIR} #sets the permissions
+  ```
+  
+### Run the docker image ###
+  
 
  ### Start the neural network classifiers ###    
  
