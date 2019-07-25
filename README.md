@@ -10,6 +10,14 @@
   
 Note: All of the commands below can also be launched from the terminal on your local computer if you have Docker installed.
 
+### Create a volume in the virtual machine to store your results ###
+  ```
+  docker volume create results
+  docker volume inspect results
+  sudo chown :100 /var/lib/docker/volumes/results/_data
+  sudo chmod 775 /var/lib/docker/volumes/results/_data
+  sudo chmod g+s /var/lib/docker/volumes/results/_data
+
 ### Run the docker image ###
   1. Pull the docker image with the command below. You can use ``` docker images ``` to check if you successfully pulled the image. 
   
@@ -21,7 +29,7 @@ Note: All of the commands below can also be launched from the terminal on your l
      git clone https://github.com/cyber-carpentry/group2-machine-learning/
      cd group2-machine-learning
      docker build -t sprince399/mlnotebook .
- 
+
  ### Start the neural network classifiers ###    
  
  There are multiple options for using the neural networks. We suggest starting with Option 1 for optimal reproducibility. 
@@ -41,7 +49,8 @@ Note: All of the commands below can also be launched from the terminal on your l
  1. Enter the command below to run the docker image.
  
    ``` 
-     docker run -v ${RESULTSDIR}:/home/jovyan/results -it sprince399/mlnotebook sh
+     ### docker run -v ${RESULTSDIR}:/home/jovyan/results -it sprince399/mlnotebook sh
+     docker run --rm --mount source=results,target=/home/jovyan/results -it sprince399/mlnotebook sh
    ```
     
  2. Once you are in the shell, run the command below:
