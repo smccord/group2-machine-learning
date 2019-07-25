@@ -3,14 +3,15 @@
 Machine learning classifiers, such as those found in tensorflow, are powerful tools for image classification. To test new models or newly parameterized models, the MNIST and Fashion-MNIST datasets are commonly used to to explore concepts in machine learning. The module below works through an example of machine learning in tensorflow using MNIST and MNISTFashion to compare model performance on two different datasets. In the future, additional models or datasets could also be added to this workflow to compare across more research situtations. 
 
 **Inputs**
-  1. MNIST, accessed via the Keras library
-  2. Fashion MNIST, accessed via the Keras Library
-  3. run_main.py which runs a sequence of python scripts and Jupyter notebooks
+  1. ```data/mnist.txt``` tells the system to use the MNIST dataset, accessed via the Keras library
+  2. ```data/fashion.txt``` tells the system to call Fashion MNIST, accessed via the Keras Library
+  3. ```run_main.py``` which runs a sequence of python scripts and Jupyter notebooks
+  
   
 **Outputs**
-  1. <data>.html: Jupyter notebook outputs
-  2. <data>_model_results_summary.txt: Summary of the model runs
-  3. <data>_results_summary_plots.pdf: Graphical summary of model results
+  1. ```<data>.html```: Jupyter notebook outputs
+  2. ```<data>_model_results_summary.txt```: Summary of the model runs
+  3. ```<data>_results_summary_plots.pdf```: Graphical summary of model results
   
 ## Instructions
 
