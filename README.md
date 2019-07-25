@@ -25,9 +25,9 @@
   
      **Option 1:** Run the image with the command below if you would like to automatically initiate and run the neural networks. 
   
-       ```docker run -e dataset=mnist -it sprince399/mlnotebook sh ```
+       ```docker run -v /local/path/for/your/results/:/home/jovyan/results -it sprince399/mlnotebook sh```
   
-      The default is to run a neural net classifier on MNIST. If you would like to specify a dataset, you can add it with the ```-e``` tag (see example above). Options are mnist, fashion, whale. 
+      The default is to run a neural net classifier on both MNIST and fashion MNIST datasets.
       
       Once you are in the shell, run the commands below:
       ```
