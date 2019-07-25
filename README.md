@@ -22,10 +22,10 @@ Note: All of the commands below can also be launched from the terminal on your l
      ```
   
   2. Now you will run a shell script to build your docker image and create a volume to store your results. 
-  
-    ```
-    sh setup_docker.sh
-    ```
+
+     ```
+     sh setup_docker.sh
+     ```
   
 ### Start the neural network classifiers ###    
  
@@ -40,7 +40,7 @@ Note: All of the commands below can also be launched from the terminal on your l
   1. Enter the command below to run the docker image.
  
      ``` 
-     docker run --rm --mount source=results,target=/home/jovyan/results -it sprince399/mlnotebook sh
+     docker run --mount source=results,target=/home/jovyan/results -it sprince399/mlnotebook sh
      ```
     
   2. Once you are in the shell, run the command below:
