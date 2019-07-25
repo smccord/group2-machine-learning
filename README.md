@@ -47,17 +47,10 @@ Note: All of the commands below can also be launched from the terminal on your l
  
 #### **Option 1:** ####
  Run both mnist and fashion mnist datasets in parallel. 
- 
- 1. Use the command below to find your current directory and make a folder for your results
- 
-   ``` 
-      export RESULTSDIR=$(pwd)/results/
-   ```
-   
+
  1. Enter the command below to run the docker image.
  
    ``` 
-     ### docker run -v ${RESULTSDIR}:/home/jovyan/results -it sprince399/mlnotebook sh
      docker run --rm --mount source=results,target=/home/jovyan/results -it sprince399/mlnotebook sh
    ```
     
@@ -67,21 +60,31 @@ Note: All of the commands below can also be launched from the terminal on your l
      cd cyber-carpentry-group2-*
      snakemake
      ```
+     
  3. Optional: Delete snakemake results
     ```
     snakemake some_target --delete-all-output
     ```
  4. 
       
-   The neural network model and classifier has launched! When they are finished, you will find the files summarizing the output and results of the model in the local path you specified on your computer. Compare your results [here!](README.md#example-results)   
+   The neural network model and classifier has launched! When they are finished, you will find the files summarizing the output and results of the model in the volume path that was previously created. To access them enter the command below.
+  
+  ```
+  sudo cat ${MYVOLDIR}/fileyouwanttolookat
+  
+  #for example
+  sudo cat ${MYVOLDIR}/mnist_model_results_summary.txt
+  ```
       
+  Compare your results [here!](README.md#example-results)  
+  
 #### **Option 2:** ####
 Run mnist or fashion mnist datasets on their own.
 
  1. Enter the command below to run the docker image. Fill in the section ```/local/path/for/results/``` with the location on your instance and/or local computer 
  
    ``` 
-     docker run -v /local/path/for/results/:/home/jovyan/results -it sprince399/mlnotebook sh
+     docker run --rm --mount source=results,target=/home/jovyan/results -it sprince399/mlnotebook sh
    ```
     
  2. Once you are in the shell, run the commands below. You can specify the dataset you would like to run by writing ```mnist.txt``` or ```fashion.txt``` as the option for --int_param. 
@@ -90,7 +93,16 @@ Run mnist or fashion mnist datasets on their own.
       cd cyber-carpentry-group2-machine-learning-*
       python run_main.py dataset --int_param mnist.txt
       ```
-  The neural network model and classifier has launched! When they are finished, you will find the files summarizing the output and results of the model in the local path you specified on your computer. Compare your results [here!](README.md#example-results)   
+  The neural network model and classifier has launched! When they are finished, you will find the files summarizing the output and results of the model in the volume path that was previously created. To access them enter the command below.
+  
+  ```
+  sudo cat ${MYVOLDIR}/fileyouwanttolookat
+  
+  #for example
+  sudo cat ${MYVOLDIR}/mnist_model_results_summary.txt
+  ```
+  
+  Compare your results [here!](README.md#example-results)   
 
 #### **Option 3:** ####
 
