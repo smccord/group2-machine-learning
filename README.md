@@ -126,14 +126,14 @@ Run mnist or fashion mnist datasets on their own.
 ## Example results ##
 
 ### MNIST ###
-[Model summary](results/mnist_model_results_summary.txt)
+[Model summary]https://github.com/cyber-carpentry/group2-machine-learning/blob/master/example_results/mnist_model_results_summary.txt)
 
-[Model performance](results/mnist_results_summary_plots.pdf)
+[Model performance](https://github.com/cyber-carpentry/group2-machine-learning/blob/master/example_results/fashion_results_summary_plots.pdf)
 
 ### fashion MNIST ###
-[Model summary](results/fashion_model_results_summary.txt)
+[Model summary](https://github.com/cyber-carpentry/group2-machine-learning/blob/master/example_results/fashion_model_results_summary.txt)
 
-[Model performance](results/fashion_results_summary_plots.pdf)
+[Model performance](https://github.com/cyber-carpentry/group2-machine-learning/blob/master/example_results/fashion_results_summary_plots.pdf)
 
 ## Github file metadata
 ```Dockerfile``` Defines the Docker image build. This image is also set to autobuild on [Docker Hub](https://hub.docker.com/r/sprince399/mlnotebook)
@@ -154,11 +154,13 @@ Run mnist or fashion mnist datasets on their own.
 
 ```run_main.py``` Runs the ```main.ipynb```. This enables Running from  ```snakemake```
 
-```\archive``` Archived example reports
+```\archive``` Archived example reports and project data. 
 
-```hooks``` Enables version control on Dockerfiles
+```\hooks``` Enables version control on Dockerfiles
 
-```data``` Holds data input files. 
+```\data``` Holds data input files. 
+
+```\example_results``` Example output results from the ```snakemake``` command. 
 
 
 ## Useful Links
