@@ -16,6 +16,11 @@ Note: All of the commands below can also be launched from the terminal on your l
      ``` 
      docker pull sprince399/mlnotebook
      ```         
+  2. Alternate option: pull from the GitHub page
+     ```
+     git clone https://github.com/cyber-carpentry/group2-machine-learning/
+     cd group2-machine-learning
+     docker build -t sprince399/mlnotebook .
  
  ### Start the neural network classifiers ###    
  
