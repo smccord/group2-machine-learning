@@ -1,4 +1,6 @@
-# group2-machine-learning
+# Machine Learning Reproducible Example (Group 2) 
+## Background
+Machine learning classifiers, such as those found in tensorflow, are powerful tools for image classification. To test new models or newly parameterized models, the MNIST and MNIST-Fashion datasets are commonly used to to explore concepts in machine learning. The module below works through an example of machine learning in tensorflow using MNIST and MNISTFashion to compare model performance on two different datasets. In the future, additional models or datasets could also be added to this workflow to compare across more research situtations. 
 
 ## Instructions
 
