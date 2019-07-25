@@ -10,8 +10,6 @@ Machine learning classifiers, such as those found in tensorflow, are powerful to
   3. Select an _m1.medium_ instance in instance size, and then click "Launch Instance."
   4. Once the instance is "Active," go into the shell either through the Web Shell or via ssh.
   
-Note: All of the commands below can also be launched from the terminal on your local computer if you have Docker installed.
-
 ### Set up the docker image and volume ###
   
   1. Clone the github repo with the relevant dockerfile.
@@ -54,12 +52,12 @@ Note: All of the commands below can also be launched from the terminal on your l
    
   3. When they are finished, you will find the files summarizing the output and results of the model in the /home/jovyan/results folder. You can also access these files outside of the Jetstream instance by entering the command below.
   
-  ```
-  sudo cat ${MYVOLDIR}/fileyouwanttolookat
-  
-  #for example
-  sudo cat ${MYVOLDIR}/mnist_model_results_summary.txt
-  ```
+    ```
+    sudo cat ${MYVOLDIR}/fileyouwanttolookat
+
+    #for example
+    sudo cat ${MYVOLDIR}/mnist_model_results_summary.txt
+    ```
       
   Compare your results [here!](README.md#example-results)  
   
@@ -75,24 +73,24 @@ Run mnist or fashion mnist datasets on their own.
 
  1. Enter the command below to run the docker image. Fill in the section `/local/path/for/results/` with the location on your instance and/or local computer 
  
-   ``` 
-     docker run --rm --mount source=results,target=/home/jovyan/results -it sprince399/mlnotebook sh
-   ```
+     ``` 
+       docker run --mount source=results,target=/home/jovyan/results -it sprince399/mlnotebook sh
+     ```
     
  2. Once you are in the shell, run the commands below. You can specify the dataset you would like to run by writing ```mnist.txt``` or ```fashion.txt``` as the option for --int_param. 
  
       ```
       cd cyber-carpentry-group2-machine-learning-*
-      python run_main.py dataset --int_param mnist.txt
+      python run_main.py mnist.txt
       ```
   The neural network model and classifier has launched! When they are finished, you will find the files summarizing the output and results of the model in the volume path that was previously created. To access them enter the command below.
   
-  ```
-  sudo cat ${MYVOLDIR}/fileyouwanttolookat
-  
-  #for example
-  sudo cat ${MYVOLDIR}/mnist_model_results_summary.txt
-  ```
+      ```
+      sudo cat ${MYVOLDIR}/fileyouwanttolookat
+
+      #for example
+      sudo cat ${MYVOLDIR}/mnist_model_results_summary.txt
+      ```
   
   Compare your results [here!](README.md#example-results)   
 
