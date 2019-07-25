@@ -17,7 +17,8 @@ Note: All of the commands below can also be launched from the terminal on your l
   sudo chown :100 /var/lib/docker/volumes/results/_data
   sudo chmod 775 /var/lib/docker/volumes/results/_data
   sudo chmod g+s /var/lib/docker/volumes/results/_data
-
+  ```
+  
 ### Run the docker image ###
   1. Pull the docker image with the command below. You can use ``` docker images ``` to check if you successfully pulled the image. 
   
