@@ -135,7 +135,7 @@ Run mnist or fashion mnist datasets on their own.
 
 [Model performance](https://github.com/cyber-carpentry/group2-machine-learning/blob/master/example_results/fashion_results_summary_plots.pdf)
 
-## Github file metadata
+## Github Repository file metadata
 ```Dockerfile``` Defines the Docker image build. This image is also set to autobuild on [Docker Hub](https://hub.docker.com/r/sprince399/mlnotebook)
 
 ```Snakefile``` Defines the ```snakemake``` workflow and iterates over datasets
