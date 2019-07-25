@@ -40,13 +40,13 @@ Machine learning classifiers, such as those found in tensorflow, are powerful to
   
 ### Start the neural network classifiers ###    
  
- There are multiple options for using the neural networks. We suggest starting with Option 1 for optimal reproducibility. 
+There are multiple options for using the neural networks. We suggest starting with Option 1 for optimal reproducibility. 
   - [Option 1](README.md#option-1): Run both mnist and fashion mnist datasets in parallel.
   - [Option 2](README.md#option-2): Run mnist or fashion mnist datasets on their own.
   - [Option 3](README.md#option-3): Explore the code via jupyter notebooks.
  
 #### **Option 1:** ####
- Run both mnist and fashion mnist datasets in parallel. 
+Run both mnist and fashion mnist datasets in parallel. 
 
   1. Enter the command below to run the docker image.
  
@@ -63,7 +63,7 @@ Machine learning classifiers, such as those found in tensorflow, are powerful to
      
    The neural network model and classifier has launched!
    
-  3. When they are finished, you will find the files summarizing the output and results of the model in the /home/jovyan/results folder. You can also access these files outside of the Jetstream instance by entering the command below.
+  3. When they are finished, you will find the files summarizing the output and results of the model in the ```/home/jovyan/results``` folder. You can also access these files outside of the Jetstream instance by entering the command below.
   
     ```
     sudo cat ${MYVOLDIR}/fileyouwanttolookat
