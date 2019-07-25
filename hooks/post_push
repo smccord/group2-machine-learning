@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -e
+
+# Apply and push all tags
+source hooks/apply_tags
+docker push $DOCKER_REPO
