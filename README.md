@@ -1,4 +1,6 @@
-# group2-machine-learning
+# Machine Learning Reproducible Example (Group 2) 
+## Background
+Machine learning classifiers, such as those found in tensorflow, are powerful tools for image classification. To test new models or newly parameterized models, the MNIST and MNIST-Fashion datasets are commonly used to to explore concepts in machine learning. The module below works through an example of machine learning in tensorflow using MNIST and MNISTFashion to compare model performance on two different datasets. In the future, additional models or datasets could also be added to this workflow to compare across more research situtations. 
 
 ## Instructions
 
@@ -10,13 +12,27 @@
   
 Note: All of the commands below can also be launched from the terminal on your local computer if you have Docker installed.
 
+### Create a volume in the virtual machine to store your results ###
+  ```
+  docker volume create results
+  export MYVOLDIR=$(docker volume inspect --format '{{ .Mountpoint }}' results)
+  sudo chown :100 ${MYVOLDIR}
+  sudo chmod 775 ${MYVOLDIR}
+  sudo chmod g+s ${MYVOLDIR}
+  ```
+  
 ### Run the docker image ###
   1. Pull the docker image with the command below. You can use ``` docker images ``` to check if you successfully pulled the image. 
   
      ``` 
      docker pull sprince399/mlnotebook
      ```         
- 
+  2. Alternate option: pull from the GitHub page
+     ```
+     git clone https://github.com/cyber-carpentry/group2-machine-learning/
+     cd group2-machine-learning
+     docker build -t sprince399/mlnotebook .
+
  ### Start the neural network classifiers ###    
  
  There are multiple options for using the neural networks. We suggest starting with Option 1 for optimal reproducibility. 
@@ -27,15 +43,23 @@ Note: All of the commands below can also be launched from the terminal on your l
 #### **Option 1:** ####
  Run both mnist and fashion mnist datasets in parallel. 
  
- 1. Enter the command below to run the docker image. Fill in the section ```/local/path/for/results/``` with the location on your instance and/or local computer 
+ 1. Use the command below to find your current directory and make a folder for your results
  
    ``` 
-     docker run -v /local/path/for/results/:/home/jovyan/results -it sprince399/mlnotebook sh
+      export RESULTSDIR=$(pwd)/results/
+   ```
+   
+ 1. Enter the command below to run the docker image.
+ 
+   ``` 
+     ### docker run -v ${RESULTSDIR}:/home/jovyan/results -it sprince399/mlnotebook sh
+     docker run --rm --mount source=results,target=/home/jovyan/results -it sprince399/mlnotebook sh
    ```
     
  2. Once you are in the shell, run the command below:
      
      ```
+     cd cyber-carpentry-group2-*
      snakemake
      ```
  3. Optional: Delete snakemake results
