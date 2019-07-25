@@ -1,7 +1,3 @@
-#get dockerfile from github repo
-git clone https://github.com/cyber-carpentry/group2-machine-learning/
-cd group2-machine-learning
-
 #build the docker notebook from the dockerfile
 docker build -t sprince399/mlnotebook .
 
