@@ -126,7 +126,7 @@ Run mnist or fashion mnist datasets on their own.
 ## Example results ##
 
 ### MNIST ###
-[Model summary]https://github.com/cyber-carpentry/group2-machine-learning/blob/master/example_results/mnist_model_results_summary.txt)
+[Model summary](https://github.com/cyber-carpentry/group2-machine-learning/blob/master/example_results/mnist_model_results_summary.txt)
 
 [Model performance](https://github.com/cyber-carpentry/group2-machine-learning/blob/master/example_results/fashion_results_summary_plots.pdf)
 
