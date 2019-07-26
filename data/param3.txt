@@ -1,4 +1,0 @@
-data fashion
-batch_size 128
-num_classes 10
-epochs 15

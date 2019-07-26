@@ -13,13 +13,11 @@ def main(argv):
         f.write(' '.join(argv))
     
     a = str(sys.argv[1])
-    with open("data/"+a, 'r')as f:
-        line=f.readline()
-        data = line.rstrip('\n')
-        data = data[line.find(" ")+1:]   # gives "mnist" or "fashion" 
+    b = str(a[a.rfind('/')+1:])
     
     os.system('jupyter nbconvert --execute {:s} --to html'.format(IPYNB_FILENAME))
-    os.rename('main.html', data+'.html')
+    data = os.path.splitext(b)[0]  # gives "mnist" or "fashion" 
+    os.rename('main.html', data+'.html') # str(' '.join(argv)).rfind(' ', ' '.join(argv))
     return None
 
 if __name__ == '__main__':
