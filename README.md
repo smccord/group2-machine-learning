@@ -82,11 +82,9 @@ Run both mnist and fashion mnist datasets in parallel.
    
   5. If you would like to move the results to your home folder on your Jetstream instance, follow the commands below. 
   
-    ```
     sudo -i
     cp ${MYVOLDIR}/* /home/
     exit
-    ```
       
   Compare your results [here!](README.md#example-results)  
   
@@ -112,7 +110,7 @@ NOTE: If you are still in your docker container from the option 1 instructions, 
        docker run --mount source=results,target=/home/jovyan/results -it sprince399/mlnotebook sh
      ```
     
- 2. Once you are in the shell, run the commands below. You can specify the dataset you would like to run by writing ```mnist.txt``` or ```fashion.txt``` as the option for --int_param. 
+ 2. Once you are in the shell, run the commands below. You can specify the dataset you would like to run by writing ```mnist.txt``` or ```fashion.txt``` as the option after run_main.py 
  
       ```
       cd cyber-carpentry-group2-machine-learning-*
