@@ -159,7 +159,7 @@ Run mnist or fashion mnist datasets on their own.
 
 ```\data``` Holds data input files. 
 
-```\example_results``` Example output results from the ```snakemake``` command. 
+```\example_results``` Example output results from running the model. 
 
 
 ## Useful Links
