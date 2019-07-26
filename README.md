@@ -118,7 +118,7 @@ Run mnist or fashion mnist datasets on their own.
        docker run -p 80:8888 sprince399/mlnotebook
        ```
               
-   Back on your Jetstream instance home page, copy the IP address from the Jetstream instance. Then in a new browser type in ```http://<my.jetstream.IP>:80```. You will be prompted to enter a token which you can copy from the prompt . 
+   Back on your Jetstream instance home page, copy the IP address from the Jetstream instance. Then in a new browser type in ```http://<my.jetstream.IP>:80```. You will be prompted to enter a token which you can copy from the command line results of your ```docker run``` . 
             
  Now you can play around with the neural network models! Select any of the files to explore. 
    
