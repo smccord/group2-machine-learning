@@ -152,7 +152,7 @@ NOTE: If you are still in your docker container from the option 1 instructions, 
        docker run -p 80:8888 sprince399/mlnotebook
        ```
               
-  2. You will be given a prompt to access a jupyter notebook. It should look like the example below:
+  2. You will be given a prompt to access a jupyter notebook. It should look like the example below. Do not follow the instructions provided in the command prompt. Go to Step 3. 
   
       ```
       To access the notebook, open this file in a browser:
@@ -161,7 +161,7 @@ NOTE: If you are still in your docker container from the option 1 instructions, 
         http://(c26dc6be4e1a or 127.0.0.1):8888/?token=73258a96f4088f042c856a3f24f057be37b5da5d43067754 
       ```
       
-   3. Go to your Jetstream instance home page. Copy the IP address from the Jetstream instance.
+   3. Instead of following the shell output above, go to your Jetstream instance home page. Copy the IP address from the Jetstream instance.
    
    4. In a new browser window, enter the URL below. NOTE: you should fill in the <my.jetstream.IP> section with what you copied above. 
    
