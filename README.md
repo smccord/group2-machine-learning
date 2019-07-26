@@ -35,7 +35,7 @@ Machine learning classifiers, such as those found in tensorflow, are powerful to
   2. Now you will run a shell script to build your docker image and create a volume to store your results. 
 
      ```
-     sh setup_docker.sh
+     source setup_docker.sh
      ```
   
 ### Start the neural network classifiers ###    
@@ -63,14 +63,14 @@ Run both mnist and fashion mnist datasets in parallel.
      
    The neural network model and classifier has launched!
    
-  3. When they are finished, you will find the files summarizing the output and results of the model in the ```/home/jovyan/results``` folder. You can also access these files outside of the Jetstream instance by entering the command below.
-  
-    ```
-    sudo cat ${MYVOLDIR}/fileyouwanttolookat
+  3. When they are finished, you will find the files summarizing the output and results of the model in the `/home/jovyan/results` folder. You can also access these files outside of the docker container by entering the command below.
+    
+   ```
+   sudo cat ${MYVOLDIR}/fileyouwanttolookat
 
-    #for example
-    sudo cat ${MYVOLDIR}/mnist_model_results_summary.txt
-    ```
+   #for example
+   sudo cat ${MYVOLDIR}/mnist_model_results_summary.txt
+   ```
       
   Compare your results [here!](README.md#example-results)  
   
@@ -96,15 +96,18 @@ Run mnist or fashion mnist datasets on their own.
       cd cyber-carpentry-group2-machine-learning-*
       python run_main.py mnist.txt
       ```
-  The neural network model and classifier has launched! When they are finished, you will find the files summarizing the output and results of the model in the volume path that was previously created. To access them enter the command below.
+  The neural network model and classifier has launched! When they are finished, you will find the files summarizing the output and results of the model in the `/home/jovyan/results` folder. You can also access these files outside of the docker container by entering the commands below.
+      
+   ```  
+   sudo ls ${MYVOLDIR}
+   ``` 
   
-      ```
-      sudo cat ${MYVOLDIR}/fileyouwanttolookat
-
-      #for example
-      sudo cat ${MYVOLDIR}/mnist_model_results_summary.txt
-      ```
-  
+   This will list the available files to look at. To see the contents of these files, see the example below.
+    
+   ```
+   sudo cat ${MYVOLDIR}/mnist_model_results_summary.txt
+   ```
+   
   Compare your results [here!](README.md#example-results)   
 
 #### **Option 3:** ####
@@ -115,10 +118,6 @@ Run mnist or fashion mnist datasets on their own.
        docker run -p 80:8888 sprince399/mlnotebook
        ```
               
-  _If you are on your own machine_ 
-  Go to your browser and type in http://127.0.0.1:80. You will be prompted to enter a token which you can copy from the prompt. 
-        
-   _If you are on a Jetstream instance_
    Copy the IP address from the instance. Then in your own browser type in http://JetstreamIPAddress:80. You will be prompted to enter a token which you can copy from the prompt. 
             
  Now you can play around with the neural network models! Select any of the files to explore. 
