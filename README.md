@@ -97,17 +97,17 @@ Run mnist or fashion mnist datasets on their own.
       python run_main.py mnist.txt
       ```
   The neural network model and classifier has launched! When they are finished, you will find the files summarizing the output and results of the model in the `/home/jovyan/results` folder. You can also access these files outside of the docker container by entering the commands below.
-   
-      ```
-      sudo ls ${MYVOLDIR}                      
-      ```
+      
+   ```  
+   sudo ls ${MYVOLDIR}
+   ``` 
   
-  This will list the available files to look at. To see the contents of these files, see the example below.
+   This will list the available files to look at. To see the contents of these files, see the example below.
+    
+   ```
+   sudo cat ${MYVOLDIR}/mnist_model_results_summary.txt
+   ```
    
-      ```
-      sudo cat ${MYVOLDIR}/mnist_model_results_summary.txt
-      ```
-  
   Compare your results [here!](README.md#example-results)   
 
 #### **Option 3:** ####
