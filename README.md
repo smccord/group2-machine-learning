@@ -63,14 +63,14 @@ Run both mnist and fashion mnist datasets in parallel.
      
    The neural network model and classifier has launched!
    
-  3. When they are finished, you will find the files summarizing the output and results of the model in the ```/home/jovyan/results``` folder. You can also access these files outside of the Jetstream instance by entering the command below.
-  
-    ```
-    sudo cat ${MYVOLDIR}/fileyouwanttolookat
+  3. When they are finished, you will find the files summarizing the output and results of the model in the `/home/jovyan/results` folder. You can also access these files outside of the docker container by entering the command below.
+    
+   ```
+   sudo cat ${MYVOLDIR}/fileyouwanttolookat
 
-    #for example
-    sudo cat ${MYVOLDIR}/mnist_model_results_summary.txt
-    ```
+   #for example
+   sudo cat ${MYVOLDIR}/mnist_model_results_summary.txt
+   ```
       
   Compare your results [here!](README.md#example-results)  
   
@@ -96,7 +96,7 @@ Run mnist or fashion mnist datasets on their own.
       cd cyber-carpentry-group2-machine-learning-*
       python run_main.py mnist.txt
       ```
-  The neural network model and classifier has launched! When they are finished, you will find the files summarizing the output and results of the model in the volume path that was previously created. To access them enter the command below.
+  The neural network model and classifier has launched! When they are finished, you will find the files summarizing the output and results of the model in the `/home/jovyan/results` folder. You can also access these files outside of the docker container by entering the command below.
   
       ```
       sudo cat ${MYVOLDIR}/fileyouwanttolookat
