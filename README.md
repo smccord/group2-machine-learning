@@ -20,7 +20,7 @@ Machine learning classifiers, such as those found in tensorflow, are powerful to
 ### Initiate a virtual machine through a cloud server
   1. Log in to [Jetstream](https://use.jetstream-cloud.org/application/dashboard) and click "Start a New Instance."
   2. Select the _Ubuntu 18.04 Devel and Docker_ instance and press launch.
-  3. Select an _m1.medium_ instance in instance size, and then click "Launch Instance."
+  3. Select an _m1.xlarge_ instance in instance size, and then click "Launch Instance."
   4. Once the instance is "Active," go into the shell either through the Web Shell or via ssh.
   
 ### Set up the docker image and volume ###
@@ -118,7 +118,7 @@ Run mnist or fashion mnist datasets on their own.
        docker run -p 80:8888 sprince399/mlnotebook
        ```
               
-   Copy the IP address from the instance. Then in your own browser type in http://JetstreamIPAddress:80. You will be prompted to enter a token which you can copy from the prompt. 
+   Back on your Jetstream instance home page, copy the IP address from the Jetstream instance. Then in a new browser type in ```http://<my.jetstream.IP>:80```. You will be prompted to enter a token which you can copy from the prompt . 
             
  Now you can play around with the neural network models! Select any of the files to explore. 
    
