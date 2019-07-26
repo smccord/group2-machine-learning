@@ -63,7 +63,15 @@ Run both mnist and fashion mnist datasets in parallel.
      
    The neural network model and classifier has launched!
    
-  3. When they are finished, you will find the files summarizing the output and results of the model in the `/home/jovyan/results` folder. You can also access these files outside of the docker container by entering the command below.
+  3. When they are finished, you will find the files summarizing the output and results of the model in the `/home/jovyan/results` folder within your container. 
+  
+  4. To access the results outside of your container, first exit the container with the command below:
+  
+     ```
+     exit
+     ```
+     
+     To view the results, enter the command below (again, you should now be OUTSIDE of the container). 
     
    ```
    sudo cat ${MYVOLDIR}/fileyouwanttolookat
@@ -71,6 +79,14 @@ Run both mnist and fashion mnist datasets in parallel.
    #for example
    sudo cat ${MYVOLDIR}/mnist_model_results_summary.txt
    ```
+   
+  5. If you would like to move the results to your home folder on your Jetstream instance, follow the commands below. 
+  
+    ```
+    sudo -i
+    cp ${MYVOLDIR}/* /home/
+    exit
+    ```
       
   Compare your results [here!](README.md#example-results)  
   
@@ -84,7 +100,13 @@ Run both mnist and fashion mnist datasets in parallel.
 #### **Option 2:** ####
 Run mnist or fashion mnist datasets on their own.
 
- 1. Enter the command below to run the docker image. Fill in the section `/local/path/for/results/` with the location on your instance and/or local computer 
+NOTE: If you are still in your docker container from the option 1 instructions, please exit now with the command below:
+
+  ```
+  exit
+  ```
+
+ 1. Enter the command below to run the docker image. Do NOT change the username on the mlnotebook. 
  
      ``` 
        docker run --mount source=results,target=/home/jovyan/results -it sprince399/mlnotebook sh
@@ -112,15 +134,32 @@ Run mnist or fashion mnist datasets on their own.
 
 #### **Option 3:** ####
 
-  1. Enter the command below if you would like to explore the neural network model code via jupyter notebooks. You will be given a prompt to access a jupyter notebook.
+NOTE: If you are still in your docker container from the option 1 instructions, please exit now with the command below:
+
+  1. Enter the command below if you would like to explore the neural network model code via jupyter notebooks. 
      
        ```
        docker run -p 80:8888 sprince399/mlnotebook
        ```
               
-   Back on your Jetstream instance home page, copy the IP address from the Jetstream instance. Then in a new browser type in ```http://<my.jetstream.IP>:80```. You will be prompted to enter a token which you can copy from the command line results of your ```docker run``` . 
-            
- Now you can play around with the neural network models! Select any of the files to explore. 
+  2. You will be given a prompt to access a jupyter notebook. It should look like the example below:
+  
+      ```
+      To access the notebook, open this file in a browser:
+        file:///home/jovyan/.local/share/jupyter/runtime/nbserver-6-open.html
+        Or copy and paste one of these URLs:
+        http://(c26dc6be4e1a or 127.0.0.1):8888/?token=73258a96f4088f042c856a3f24f057be37b5da5d43067754 
+      ```
+      
+   3. Go to your Jetstream instance home page. Copy the IP address from the Jetstream instance.
+   
+   4. In a new browser window, enter the URL below. NOTE: you should fill in the <my.jetstream.IP> section with what you copied above. 
+   
+      ```
+      http://<my.jetstream.IP>:80
+      ```
+      
+   You will get a prompt to enter the token provided in the last line of instruction #2. Now you can look at the code underlying the neural network models! Select any of the files to explore. 
    
 ## Example results ##
 
