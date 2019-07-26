@@ -116,19 +116,31 @@ NOTE: If you are still in your docker container from the option 1 instructions, 
       cd cyber-carpentry-group2-machine-learning-*
       python run_main.py mnist.txt
       ```
-  The neural network model and classifier has launched! When they are finished, you will find the files summarizing the output and results of the model in the `/home/jovyan/results` folder. You can also access these files outside of the docker container by entering the commands below.
-      
-   ```  
-   sudo ls ${MYVOLDIR}
-   ``` 
+  The neural network model and classifier has launched! When they are finished, you will find the files summarizing the output and results of the model in the `/home/jovyan/results` folder. 
   
-   This will list the available files to look at. To see the contents of these files, see the example below.
+ 3. To access the results outside of your container, first exit the container with the command below:
+  
+     ```
+     exit
+     ```
+     
+     To view the results, enter the command below (again, you should now be OUTSIDE of the container). 
     
    ```
+   sudo cat ${MYVOLDIR}/fileyouwanttolookat
+
+   #for example
    sudo cat ${MYVOLDIR}/mnist_model_results_summary.txt
    ```
    
-  Compare your results [here!](README.md#example-results)   
+  4. If you would like to move the results to your home folder on your Jetstream instance, follow the commands below. 
+  
+    sudo -i
+    cp ${MYVOLDIR}/* /home/
+    exit
+      
+  Compare your results [here!](README.md#example-results)  
+  
 
 #### **Option 3:** ####
 
