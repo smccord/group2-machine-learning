@@ -35,7 +35,7 @@ Machine learning classifiers, such as those found in tensorflow, are powerful to
   2. Now you will run a shell script to build your docker image and create a volume to store your results. 
 
      ```
-     sh setup_docker.sh
+     source setup_docker.sh
      ```
   
 ### Start the neural network classifiers ###    
