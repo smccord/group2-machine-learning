@@ -17,6 +17,8 @@ Machine learning classifiers, such as those found in tensorflow, are powerful to
   
 ## Instructions
 
+Note: for these instructions you will need a Jetstream account. If you do not already have one, you can find instructions for setting up a trial account [here](https://iujetstream.atlassian.net/wiki/spaces/JWT/pages/76150553/Get+a+Jetstream+Trial+Access+account)
+
 ### Initiate a virtual machine through a cloud server
   1. Log in to [Jetstream](https://use.jetstream-cloud.org/application/dashboard) and click "Start a New Instance."
   2. Select the _Ubuntu 18.04 Devel and Docker_ instance and press launch.
