@@ -1,0 +1,34 @@
+# Cyber Carpentry 2019 Notes and Links
+
+## Continuous Analysis* 
+https://greenelab.github.io/continuous_analysis/
+
+## Docker
+One click experience: 
+* Binder: https://mybinder.readthedocs.io/en/latest/tutorials/dockerfile.html
+* Code Ocean: https://codeocean.com
+* CyVerse DE:
+- https://learning.cyverse.org/projects/vice/en/latest/developer_guide/adding.html
+- https://learning.cyverse.org/projects/vice/en/latest/developer_guide/building.html
+
+Integrate with Github
+https://github.com/julianpistorius/snakemake-docker-flow
+
+General
+https://docker-science.github.io/
+
+
+## Reproducible Research
+[Checklist] https://github.com/DataScienceSpecialization/courses/blob/master/05_ReproducibleResearch/Checklist/index.md
+National Academy of Science Report
+[Frictionless Data]https://frictionlessdata.io/data-packages/
+[Long tail Wired article](https://www.wired.com/2004/10/tail/)
+
+## Snakemake
+https://hpc-carpentry.github.io/hpc-python/
+https://github.com/snakemake-workflows/cookiecutter-snakemake-workflow
+https://github.com/xguse/cookiecutter-snakemake-analysis-pipeline
+[Hello world exampl](https://molb7621.github.io/workshop/Classes/snakemake-tutorial.html)
+
+Jetstream
+[API](https://github.com/sanjanasudarshan/JetstreamAPITutorial_PEARC19)
