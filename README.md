@@ -21,7 +21,7 @@ Machine learning classifiers, such as those found in tensorflow, are powerful to
   1. Log in to [Jetstream](https://use.jetstream-cloud.org/application/dashboard) and click "Start a New Instance."
   2. Select the _Ubuntu 18.04 Devel and Docker_ instance and press launch.
   3. Select an _m1.xlarge_ instance in instance size, and then click "Launch Instance."
-  4. Once the instance is "Active," go into the shell either through the Web Shell or via ssh.
+  4. Once the instance is "Active," go into the shell either through the Web Shell or via ssh. If you would like to access the shell via ssh key, you can set up ssh keys for Jetstream by following the instructions [here](https://iujetstream.atlassian.net/wiki/spaces/JWT/pages/17465474/Adding+SSH+keys+to+the+Jetstream+Atmosphere+environment)
   
 ### Set up the docker image and volume ###
   
